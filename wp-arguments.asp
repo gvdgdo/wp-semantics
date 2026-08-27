@@ -37,6 +37,11 @@ naturalArgument((R,per(X))) :- naturalArgument((R,obl(X))).
 subargument(A,A) :- naturalArgument(A).
 
 %% A is a proper subargument of B
+% the subargument of an argument B, are the arguments for the elements in the 
+% body of the rule that generates B. We have to cover two cases, the 
+%  subargument is a regular natural argument identified by a pair (R',Y) where 
+% R' is a rule and Y is the conclusion of the rule, or the subargument is an
+% imaginary argument or a fact identified by a literal Y. 
 subargument(A,B) :- 
     B == (R,X), rule(R,X), body(R,Y), 
     argument(A), A == (R',Y).
@@ -45,18 +50,14 @@ subargument(A,B) :-
     B == (R,X), rule(R,X), body(R,Y), 
     argument(A), A==Y.
 
-subargument(A,B) :- 
-    B == (R,X), rule(R,X), body(R,Y), 
-    argument(A), A == (R',Y), rule(R',Y).   
-
-subargument(A,B) :- 
-    B == (R,X), rule(R,X), body(R,A), 
-    fact(A).
-
+% this case cover the relation between obligation and permissive arguments 
+% using the D axioms of deontic logic.
 subargument(A,B) :- 
     B == (R,per(X)), A == (R,obl(X)), argument(A), argument(B).
 
+% transitive closure of the subargument relation
 subargument(A,B) :- 
+    argument(A), argument(B),
     subargument(A,C), subargument(C,B), A != B.
 
 % A is a conclusion of argument B
