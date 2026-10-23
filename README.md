@@ -20,7 +20,7 @@ An argument $A$ is _wp-acceptable_ by the sets of arguments $R$ and $S$ iff
 
 
 __Definition (wp-Rejected)__
-An argument $A$ is \emph{wp-rejected} by the sets of arguments $R$ and $S$ iff
+An argument $A$ is _wp-rejected_ by the sets of arguments $R$ and $S$ iff
 
 1. $A$ is an imaginary argument and $\exists B\in Args$, $B>A$, $B\in S$; or
 2. $A$ is a natural argument and 
