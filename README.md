@@ -1,8 +1,8 @@
 # A Novel Deontic Argumentation Semantics
 
-This repository contains an Answer Set Programming implementation of the novel WP-semantics for Deontic Argumentation.
+This repository contains an Answer Set Programming implementation of the novel wp-semantics for Deontic Argumentation.
 
-The main feature of the WP-sematnics is its ability to handle weak permission (in paticuler in the presence of deontic conflicts). 
+The main feature of the wp-sematnics is its ability to handle weak permission (in paticuler in the presence of deontic conflicts). 
 
 The wp-semantics is a bipolar sceptical semantics and  assumes two types of arguments: _natural arguments_ and _imaginary arguments_. The semantics adopts two relationships among arguments: _attack_ and _sub-argument_. Thus, given two argumetns $A$ and $B$, we can have that $A$ attacks $B$ (written as $A > B$), and we can have that argument $C$ is a sub-argument of $A$ ( $C\in Sub(A)$ ).
 
@@ -28,7 +28,7 @@ An argument $A$ is _wp-rejected_ by the sets of arguments $R$ and $S$ iff
    2. $\exists B\in Args$, $B>A$, and $S$ supports $B$.
 
 __Definition (wp-extension)__
-The \emph{wp-extension} of a Deontic Argumentation Theory $T$ is the pair
+The _wp-extension_ of a Deontic Argumentation Theory $T$ is the pair
 
 $$(JArgs,RArgs)$$
 
